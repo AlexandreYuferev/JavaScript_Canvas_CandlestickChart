@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+
+  <title>ClientApp</title>
+
+  <meta charset = "UTF-8">
+
+  <style>
+
+    #candlestickChart {
+      border: 1px solid black;
+      background-color: RGBA(16.0, 16.0, 16.0, 1.0);
+    }
+
+    #auxiliarySchedule {
+      border: 1px solid black;
+      background-color: RGBA(16.0, 16.0, 16.0, 1.0);
+    }
+    
+  </style>
+
+  <script src =    "data.js"></script>
+  <script src = "script1.js"></script>
+  <script src = "script2.js"></script>
+
+  <script>
+
+    // ==== ==== ==== ==== ... ==== ==== ==== ====
+
+    // ==== ==== ==== ==== ... ==== ==== ==== ====
+
+    window.onload = async function () {
+
+      //console.time('FirstWay');
+
+      let auxiliarySchedule = new AuxiliarySchedule("#auxiliarySchedule");
+      auxiliarySchedule.setData  (data);
+      auxiliarySchedule.drawGraph();
+
+      let candlestickChart = new CandlestickChart("#candlestickChart");
+      candlestickChart.setData  (data);
+      candlestickChart.drawGraph(0,125);
+
+      //console.timeEnd('FirstWay');
+
+      // ==== ==== ==== ==== ... ==== ==== ==== ====
+
+      // ==== ==== ==== ==== ... ==== ==== ==== ==== 
+
+    }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <canvas id = "auxiliarySchedule"></canvas>
+    <canvas id = "candlestickChart"></canvas>
+    
+
+  </body>
+
+</html>
